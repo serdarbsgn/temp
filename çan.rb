@@ -27,9 +27,13 @@ $bellavg[0]/=$bellavg[1]
 @passcount=0
 def pass arr,final
 	if final >=50
-		if arr[1]>=60 || (arr[1]>=40 && arr[1]>=$bellavg[0])
-			puts arr[0] + " isimli öğrenci " + arr[1].to_s + " Not ortalamasıyla dersi geçmiştir."
+		if arr[1]>=60
+			puts arr[0] + " isimli öğrenci " + arr[1].to_i.to_s + " Not ortalamasıyla dersi geçmiştir."
 			@passcount+=1
+		elsif arr[1]>=40 && arr[1]>=$bellavg[0]
+			puts arr[0] + " isimli öğrenci " + arr[1].to_i.to_s + " Not ortalamasıyla dersi geçmiştir. -- Çan"
+			@passcount+=1
+			$bellpass << arr
 		end
 	end
 end
@@ -40,6 +44,6 @@ end
 
 puts "Toplam Öğrenci Sayısı: #{notlar.length} \n"
 puts "Geçen Öğrenci Sayısı: #{@passcount} \n"
-puts "Genel Sınıf Ortalaması: #{$classavg} \n"
+puts "Genel Sınıf Ortalaması: #{$classavgs} \n"
 puts "Çana Girenlerin Ortalaması: #{$bellavg[0]} \n"
 puts "Geçenlerin Yüzdesi %#{100*@passcount/notlar.length}"
