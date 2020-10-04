@@ -1,14 +1,14 @@
 Pi = 3
 
-puts "Lütfen silindirin yarıçap(r) değerini giriniz?: "
+puts "Please enter the radius(r) of the cylinder: "
 r = gets.to_i
-puts "Lütfen silindirin yükseklik(h) değerini giriniz?: "
+puts "Please enter the height(h) of the cylinder: "
 h = gets.to_i
 area = 2*Pi*r*h
 volume = Pi*r*r*h
-puts "Silindirin Alani #{area} ve Hacmi #{volume}'dir"
+puts "Surface area of the cylinder is #{area} and the volume is #{volume}"
 
-puts "Carpim Tablosu...\n================="
+puts "Multiplication Table...\n================="
 for i in 1..10
 	for x in 1..10
 		print i*x , "\t"
